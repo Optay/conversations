@@ -15,7 +15,7 @@
     <tr>
       <td>{{#link-to 'game' model.game.id}}{{date-iso model.game.date}}{{/link-to}}</td>
       <td>{{#link-to 'player' model.game.white.id}}{{upper-case model.game.white.namelast}} {{model.game.white.namefirst}}{{/link-to}}</td>
-      <td>{{#link-to 'player' model.game.black.id}}{{upper-case model.game.black.namelast}} {{model.game.black.namelast}}{{/link-to}}</td>
+      <td>{{#link-to 'player' model.game.black.id}}{{upper-case model.game.black.namelast}} {{model.game.black.namefirst}}{{/link-to}}</td>
       <td>{{model.game.handicap}}</td>
       <td>{{model.game.komi}}</td>
       <td>{{model.game.resultString}}</td>
