@@ -3,8 +3,8 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   actions: {
     playerDeleted() {
-      console.log('player deleted, going back to index');
-      this.transitionToRoute('index');
+      console.log('player deleted, going back to players');
+      this.transitionToRoute('players');
     }
   },
 
