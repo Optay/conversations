@@ -1,0 +1,28 @@
+<h1>{{#link-to 'players'}}Players{{/link-to}} > {{upper-case model.player.namelast}} {{model.player.namefirst}}</h1>
+
+<h2>Stats</h2>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Record</th>
+      <th>Record as White</th>
+      <th>Record as Black</th>
+      <th>Handicap Stones Given</th>
+      <th>Handicap Stones Received</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{record}}</td>
+      <td>{{whiteRecord}}</td>
+      <td>{{blackRecord}}</td>
+      <td>{{handicapStonesGiven}}</td>
+      <td>{{handicapStonesReceived}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Games</h2>
+{{game-list model=model.games}}
+
+{{player-details player=model.player onDelete=(action 'playerDeleted') }}

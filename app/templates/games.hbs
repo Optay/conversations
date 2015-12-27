@@ -1,0 +1,6 @@
+<h1>Games</h1>
+{{game-list model=sortedGames}}
+
+{{ game-form players=model.players onSubmit=(action 'addNewGame') }}
+
+{{outlet}}

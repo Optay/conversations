@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">New Game</h3>
+  </div>
+  <div class="panel-body">
+    <label>Date {{input value=model.date name="date" placeholder="YYYY-MM-DD" size="12" classNames='form-control'}}</label>
+    <label>White player
+    <select name="white" class="form-control" onchange={{action 'selectChange' 'whiteId'}}>
+      <option value="" selected>White</option>
+      {{#each players key="@index" as |item|}}
+        <option value="{{item.id}}" selected={{is-equal item.id model.whiteId}} >
+          {{upper-case item.namelast}} {{item.namefirst}}
+        </option>
+      {{/each}}
+    </select>
+    </label>
+    <label>Black Player
+    <select name="black" class="form-control" onchange={{action 'selectChange' 'blackId'}}>
+      <option value="" selected>Black</option>
+      {{#each players key="@index" as |item|}}
+        <option value="{{item.id}}" selected={{is-equal item.id model.blackId}} >
+          {{upper-case item.namelast}} {{item.namefirst}}
+        </option>
+      {{/each}}
+    </select>
+    </label>
+    <label>Result {{input value=model.result name="result" placeholder="?+?" size="5" classNames='form-control'}}</label>
+<label>Komi {{input value=model.komi name="komi" placeholder="6.5" size="5" classNames='form-control'}}</label>
+<label>Handicap {{input value=model.handicap name="handi" placeholder="0" size="5" classNames='form-control'}}</label>
+    <button class="btn btn-sm btn-success" type="button" {{action "submit" }}>Add</button>
+  </div>
+</div>

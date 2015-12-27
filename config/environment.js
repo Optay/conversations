@@ -2,11 +2,14 @@
 
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: { 'connect-src' : "'self' http://localhost:4500" },
     modulePrefix: 'conversations',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
+      ENABLE_DS_FILTER: true, // to enable filter function on store
+      
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
@@ -20,6 +23,10 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    
+    // Disable Mirage, use the express/mongo server.
+    ENV['ember-cli-mirage'] = { enabled: false }    
+    
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;

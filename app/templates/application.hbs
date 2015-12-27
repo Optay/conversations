@@ -1,3 +1,26 @@
-<h2 id="title">Welcome to Ember</h2>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        {{#link-to 'index' classNames='navbar-brand'}}Conversations{{/link-to}}
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li>{{#link-to 'players'}}All Players{{/link-to}}</li>
+          <li>{{#link-to 'games'}}All Games{{/link-to}}</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
 
 {{outlet}}
+
+
+  </div><!-- main container -->
+

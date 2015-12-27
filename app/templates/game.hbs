@@ -1,0 +1,27 @@
+<h1>{{#link-to 'games'}}Games{{/link-to}} > {{#link-to 'player' model.game.white.id}}{{upper-case model.game.white.namelast}} {{ model.game.white.namefirst }}{{/link-to}} - {{#link-to 'player' model.game.black.id}}{{upper-case model.game.black.namelast}} {{ model.game.black.namefirst }}{{/link-to}}</h1>
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>White</th>
+      <th>Black</th>
+      <th>Handicap</th>
+      <th>Komi</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{#link-to 'game' model.game.id}}{{date-iso model.game.date}}{{/link-to}}</td>
+      <td>{{#link-to 'player' model.game.white.id}}{{upper-case model.game.white.namelast}} {{model.game.white.namefirst}}{{/link-to}}</td>
+      <td>{{#link-to 'player' model.game.black.id}}{{upper-case model.game.black.namelast}} {{model.game.black.namelast}}{{/link-to}}</td>
+      <td>{{model.game.handicap}}</td>
+      <td>{{model.game.komi}}</td>
+      <td>{{model.game.resultString}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-sm btn-warning" {{action 'deleteGame'}}>Delete</button>
+
